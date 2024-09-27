@@ -8,19 +8,28 @@ var PORT = 3000;
 app.use(express.static('public'));
 
 const cors = require('cors');
+
 app.use(cors({
     origin: 'http://127.0.0.1:5500'
 }));
 
-app.get('./images', (req, res) => {
-    console.log('...')
-    var directoryPath = path.join(__dirname, './public/images');
-    fs.readdir(directoryPath, (err, files) => {
+app.get("/", function (req, res) {
+    var directoryPath = path.join(__dirname, '/public/imagens');
+
+    var retornoImagens = [];
+
+    fs.readdir(String(directoryPath), (err, files) => {
         if (err) {
-            return res.status(500).send('Unable to scan directory');
+            return console.error('err :>> ', err);
+        }else{
+            var images = files.filter(file => /\.(jpg|jpeg|png|gif|svg)$/.test(file));
+            
+            retornoImagens = images;
+            
+            console.log('retornoImagens :>> ', retornoImagens);
+            
+            res.send(retornoImagens);
         }
-        var images = files.filter(file => /\.(jpg|jpeg|png|gif)$/.test(file));
-        res.json(images);
     });
 });
 
