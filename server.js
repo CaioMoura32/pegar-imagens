@@ -17,13 +17,13 @@ app.get("/", function (req, res) {
     var directoryPath = path.join(__dirname, '/public/imagens');
 
     var retornoImagens = [];
-
+    
     fs.readdir(String(directoryPath), (err, files) => {
         if (err) {
             return console.error('err :>> ', err);
         }else{
-            var images = files.filter(file => /\.(jpg|jpeg|png|gif|svg)$/.test(file));
-            
+            var images = files.filter(file => /\.(jpg|jpeg|png|gif|svg|mp4)$/.test(file));
+
             retornoImagens = images;
             
             console.log('retornoImagens :>> ', retornoImagens);

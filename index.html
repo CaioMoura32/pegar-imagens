@@ -1,46 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+    <title></title>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Gallery</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.5.9/css/uikit.min.css" />
+    <link href="./css/style-uk-custon.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style-custon.css">
 </head>
+
 <body>
-    <div id="gallery">
-        <div></div>
+    <img class="imagem-cubo" src="/image/img-cubo-3d.png" alt="">
+    <div class="uk-section uk-section-default" id="gallery">
+        <div class="uk-container">
+            <div class="uk-grid-column-small uk-grid-row-large uk-child-width-1-6@s uk-text-center uk-grid uk-grid-match" uk-grid>
+            </div>
+        </div>
     </div>
 
-    <script>
-        var gallery = document.getElementById('gallery');
-
-       const buscarImagens = async () => {
-            var request = await fetch('http://localhost:3000');
-
-            var response = await request.json();
-
-            console.log('response :>> ', response);
-
-            renderizarImg(response);
-
-            return response;
-       }
-
-       buscarImagens();
-
-       const renderizarImg = (imagens) => {
-
-        imagens.forEach(srcImagem => {
-             var img = document.createElement('img');
-
-             img.src = `./public/imagens/${srcImagem}`;
-
-            gallery.appendChild(img);
-
-        });
-
-       }
-    </script>
-
-    <!-- <script src="./server.js"></script> -->
+    <script src="./js/script-inclusao-videos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.5.9/js/uikit.min.js"
+        integrity="sha512-OZ9Sq7ecGckkqgxa8t/415BRNoz2GIInOsu8Qjj99r9IlBCq2XJlm9T9z//D4W1lrl+xCdXzq0EYfMo8DZJ+KA=="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.5.9/js/uikit-icons.min.js"
+        integrity="sha512-hcz3GoZLfjU/z1OyArGvM1dVgrzpWcU3jnYaC6klc2gdy9HxrFkmoWmcUYbraeS+V/GWSgfv6upr9ff4RVyQPw=="
+        crossorigin="anonymous"></script>
 </body>
+
 </html>

@@ -1,0 +1,28 @@
+.uk-container {
+    max-width: 1980px;
+}
+
+.uk-card{
+    padding: 8px !important;
+    transition: 0.6s;
+}
+
+.uk-card:hover{
+    transform: scale(1.03);
+}
+
+.uk-card-default{
+    background: #2c2b3b;
+}
+
+.uk-section-default{
+    background: #14141e;
+}
+
+.uk-card, video{
+    border-radius: 15px;
+}
+
+.uk-card-body{
+    padding: 16px;
+}

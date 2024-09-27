@@ -1,0 +1,27 @@
+@import url(./style-animation.css);
+
+iframe{
+    width: 100%;
+}
+body,html{
+    background: #14141e;
+}
+
+html{
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.uk-text-muted{
+    color: #f0f1f6;
+}
+
+p{
+    font-size: 18px;
+}
+
+.imagem-cubo{
+    position: fixed;
+    bottom: -200px;
+    left: -109px;
+    animation: flutuante 4s ease-in-out infinite;
+}

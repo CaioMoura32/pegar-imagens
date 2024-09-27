@@ -1,0 +1,9 @@
+@keyframes flutuante {
+    0%, 100% {
+        transform: translatey(0)
+    }
+
+    50% {
+        transform: translatey(-30px)
+    }
+}
